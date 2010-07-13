@@ -1,0 +1,24 @@
+# red parens around active window, bold, kinda fancy
+#hardstatus alwayslastline "%{=b}%{w}%?%-w%?%{r}(%{w}%n%f %t%{r})%{w}%?%+w%= %c:%s %{g}"
+
+# simpler, white on blue for active window
+hardstatus alwayslastline "%{kw}%-w%{bw}%50>%n %t%{-}%+w%<"
+
+# Turn off start message:
+startup_message off
+
+# Set messages timeout to one second: 
+msgwait 3
+
+# default: 100
+defscrollback 5000
+
+# make backspace and delete work properly
+bindkey -k kb stuff ^H
+
+# fix overwriting
+altscreen on
+
+# Enable color for all terminal types
+termcap  * 'AF=\E[3%dm:AB=\E[4%dm'
+terminfo * 'AF=\E[3%p1%dm:AB=\E[4%p1%dm'
